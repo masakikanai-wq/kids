@@ -1,0 +1,21 @@
+
+/* Reset CSS */
+/* ============================================ */
+
+input[type="submit"] {
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    background: none;
+}
+
+/* Color CSS */
+/* ============================================ */
+
+.yellow-ac {
+    color:#F5C302;
+  }
+
+/* Bootstrap button color CSS */
+/* ============================================ */
