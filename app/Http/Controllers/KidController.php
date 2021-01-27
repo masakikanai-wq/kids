@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+// ログイン機能を実装するときにこの記述大切
+use Illuminate\Support\Facades\Auth;
 // Kidモデルを呼び出す
 use App\Models\Kid;
-
 // KidRequestでバリデーションを実施
 use App\Http\Requests\KidRequest;
+
+use DateTime;
+
+// use Carbon\Carbon;
 
 class KidController extends Controller
 {
@@ -19,11 +23,57 @@ class KidController extends Controller
      */
     public function index()
     {
+        // Auth::user()はログインしているユーザーのモデルインスタンスを返す
+        $user = Auth::user();
+
         // Kidモデルを使用し、all()でdbからすべてのデータを取得する
         $kids = Kid::all();
+
+        // echo "<pre>";
+        // var_dump($kids);
+        // echo "</pre>";
+
+        // $view_data = [];
+        // $view_data = $this->format_birthday($kids);
+
+        // $kids = $view_data;
+
+        // echo "<pre>";
+        // var_dump($kids);
+        // echo "</pre>";
+
         // 配列の形で$kidsをindex.blade.phpに受け渡す
-        return view('index', ['kids'=>$kids]);
+        // return view('index', compact('view_data'), ['kids'=>$kids], ['user'=>$user]);
+        return view('index', ['kids'=>$kids], ['user'=>$user]);
     }
+
+    /**
+     * 誕生日からの経過日数を処理する関数
+     *
+     * 
+     */    
+    // function format_birthday($kids)
+    // {
+    //     $response_data = [];
+
+    //     foreach($kids as $record){
+    //         $now = new DateTime('now');
+
+    //         $birthday = $record->birthday;
+    //         $diff = $now->diff($birthday);
+    //         $formated_interval = $diff->format('%Y年 %mヶ月 %d日');
+
+    //         $res_record = [];
+    //         $res_record['id'] = $record->id;
+    //         $res_record['name'] = $record->name;
+    //         $res_record['birthday'] = $record->birthday->toDateTimeString();
+    //         $res_record['formated_interval'] = $formated_interval;
+
+    //         array_push($response_data, $res_record);
+    //     }
+
+    //     return $response_data;
+    // }
 
     /**
      * Show the form for creating a new resource.

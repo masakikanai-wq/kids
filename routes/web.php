@@ -11,13 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/index', 'KidController@index')->name('index');
+Route::get('/', 'KidController@index')->name('index');
 
 // 新規登録ページ表示
 Route::get('/post/add', 'KidController@add')->name('post_add');

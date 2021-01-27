@@ -3,7 +3,7 @@
 
 @section('detail')
     <p class="pt-4 mb-2">{{ $kid->name }} のとうろくデータ</p>
-    <p><a href="/index" class="text-warning">＜＜＜ いちらんへもどる</a></p>
+    <p><a href="/" class="text-warning">＜＜＜ いちらんへもどる</a></p>
     <div>
         <div class="row m-0 float-right">
             <p class="mr-2"><a href="{{ route('post_edit', $kid->id) }}"><i class="fas fa-user-edit yellow-ac"></i></a></p>
@@ -25,7 +25,7 @@
             </tr>
             <tr>
                 <th scope="row">たんじょうび</th>
-                <td>{{ $kid->birthday }}</td>
+                <td>{{ $kid->birthday->format('Y年 m月 d日') }}</td>
             </tr>
             <tr>
                 <th scope="row">おとうさん</th>

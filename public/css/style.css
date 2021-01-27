@@ -10,12 +10,132 @@ input[type="submit"] {
     background: none;
 }
 
-/* Color CSS */
+/* color */
 /* ============================================ */
 
 .yellow-ac {
     color:#F5C302;
   }
 
-/* Bootstrap button color CSS */
+.bg-white{
+    color: #FFFFFF;
+    /*background-color:none !important;*/
+  }
+
+/* header */
 /* ============================================ */
+
+.nav-link {
+    font-size: 0.9em !important;
+}
+
+.navbar-brand {
+    font-size: 1.125em !important;
+}
+
+/* cover */
+/* ============================================ */
+
+.cover {
+    padding: 6rem 1rem;
+    margin: 0;
+    border-radius: 0;
+    background:url(../image/cover-01.jpg) center no-repeat; 
+    background-size: cover;
+}
+
+/* jumbotron */
+/* ============================================ */
+
+.lead {
+    font-size: 1.0rem;
+    font-weight: 300;
+}
+
+/* welcome */
+/* ============================================ */
+
+.welcome h1 {
+    font-size: 200%;
+  }
+
+.fa-mail-bulk {
+    color:#F5C302;
+  }
+  
+.fa-user-clock {
+    color:#F5C302;
+  }
+  
+.fa-calendar-alt {
+    color:#F5C302;
+  }
+
+.fa-mail-bulk, .fa-user-clock, .fa-calendar-alt {
+    font-size: 4em;
+    margin: 1rem;
+  }
+
+/* footer */
+/* ============================================ */
+
+ footer {
+    background-color: #3f3f3f;
+    color: #d5d5d5;
+    padding-top: 2rem;
+  
+  }
+  
+  hr.light {
+    border-top: 1px solid #d5d5d5;
+    width: 75%;
+    margin-top: .8rem;
+    margin-bottom: 1rem;
+  }
+  
+  footer a {
+    color: #d5d5d5;
+  }
+  
+  hr.light-100 {
+    border-top: 1px solid #d5d5d5;
+    width: 100%;
+    margin-top: .8rem;
+    margin-bottom: 1rem;
+  }
+
+/* font */
+/* ============================================ */
+
+.font-small {
+    font-size: 1.4rem;
+  }
+
+/*---Media Queries --*/
+/* ============================================ */
+
+@media (max-width: 992px) {
+    .welcome h1 {
+        font-size: 200%;
+    }
+}
+
+@media (max-width: 768px) {
+    .welcome h1 {
+        font-size: 200%;
+    }
+}
+
+@media (max-width: 576px) {
+    .welcome h1 {
+        font-size: 160%;
+    }
+
+    .explanation h2 {
+        font-size: 150%;
+    }
+
+    .feature h3 {
+        font-size: 120%;
+    }
+}
