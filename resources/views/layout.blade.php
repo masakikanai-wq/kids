@@ -11,8 +11,10 @@
     <!-- fontawesome -->
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 
-    <title>Kids Log</title>
+    <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
+    <title>Kids Log</title>
   </head>
   <body>
 
@@ -68,12 +70,10 @@
         </div>
     </nav>
 
-    <main class="py-4">
+    <main>
 
         <section id="index-wrapper">
-            <div class="container">
                 @yield('index')
-            </div>
         </section>
 
         <section id="create-wrapper">

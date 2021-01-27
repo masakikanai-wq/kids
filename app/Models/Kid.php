@@ -17,6 +17,17 @@ class Kid extends Model
         'father_name',
         'mother_name',
         'gridRadios',
-        'memo'
+        'memo',
+        'formated_interval'
+    ];
+
+    protected $dates = [
+        // 'id',
+        // 'name',
+        'now',
+        'birthday',
+        // 'now_formated_date',
+        // 'formated_interval',
+        // 'diff'
     ];
 }
