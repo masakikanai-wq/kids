@@ -2,6 +2,15 @@
 @section('title', '投稿編集')
 
 @section('edit')
+    @if ($errors->any())
+        <div class="alert alert-danger mt-4">
+            <ul class="mb-0">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <p class="py-4">データを編集しましょう！</p>
     <div>
         <form action="{{ route('post_update', $kid->id) }}" method="post" onsubmit="return submitChk()">
@@ -32,7 +41,7 @@
             <div class="form-group row">
                 <label for="kids_birthday" class="col-sm-2 col-form-label">たんじょうび</label>
                 <div class="col-sm-10">
-                <input type="date" class="form-control" id="kids_birthday" name="birthday" value="{{ old('birthday') ?: $kid->birthday }}">
+                <input type="date" class="form-control" id="kids_birthday" name="birthday" value="{{ old('birthday') ?: $kid->birthday->format('Y-m-d') }}">
                 </div>
             </div>
 

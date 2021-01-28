@@ -2,6 +2,15 @@
 @section('title', '新規登録')
 
 @section('add')
+    @if ($errors->any())
+        <div class="alert alert-danger mt-4">
+            <ul class="mb-0">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <p class="py-4">データを入力しましょう！</p>
     <div>
         <form action="{{ route('post_create') }}" method="post" onsubmit="return submitChk()">
@@ -9,7 +18,7 @@
             <div class="form-group row">
                 <label for="kids_name" class="col-sm-2 col-form-label">おなまえ</label>
                 <div class="col-sm-10">
-                <input type="text" class="form-control" id="kids_name" name="name" placeholder="お子さんのおなまえ">
+                <input type="text" class="form-control" id="kids_name" name="name" placeholder="お子さんのおなまえ" value="{{ old('name') }}">
                 </div>
             </div>
 
@@ -26,21 +35,21 @@
             <div class="form-group row">
                 <label for="kids_birthday" class="col-sm-2 col-form-label">たんじょうび</label>
                 <div class="col-sm-10">
-                <input type="date" class="form-control" id="kids_birthday" name="birthday" placeholder="たんじょうび">
+                <input type="date" class="form-control" id="kids_birthday" name="birthday" placeholder="たんじょうび" value="{{ old('birthday') }}">
                 </div>
             </div>
 
             <div class="form-group row">
                 <label for="father_name" class="col-sm-2 col-form-label">おとうさん</label>
                 <div class="col-sm-10">
-                <input type="text" class="form-control" id="father_name" name="father" placeholder="おとうさんのおなまえ">
+                <input type="text" class="form-control" id="father_name" name="father" placeholder="おとうさんのおなまえ" value="{{ old('father') }}">
                 </div>
             </div>
 
             <div class="form-group row">
                 <label for="mother_name" class="col-sm-2 col-form-label">おかあさん</label>
                 <div class="col-sm-10">
-                <input type="text" class="form-control" id="mother_name" name="mother" placeholder="おかあさんのおなまえ">
+                <input type="text" class="form-control" id="mother_name" name="mother" placeholder="おかあさんのおなまえ" value="{{ old('mother') }}">
                 </div>
             </div>
 
@@ -67,7 +76,7 @@
             <div class="form-group row">
                 <label for="kids_memo" class="col-sm-2 col-form-label">メモ</label>
                 <div class="col-sm-10">
-                <textarea class="form-control" id="kids_memo" rows="3" name="memo"></textarea>
+                <textarea class="form-control" id="kids_memo" rows="3" name="memo">{{ old('memo') }}</textarea>
                 </div>
             </div>
 

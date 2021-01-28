@@ -16,11 +16,13 @@ class CreateKidsTable extends Migration
         if (!Schema::hasTable('kids')) {
             Schema::create('kids', function (Blueprint $table) {
                 $table->bigIncrements('id');
+                $table->integer('user_id');
                 $table->string('name');
                 $table->date('birthday');
                 $table->string('sex');
                 $table->string('father_name');
                 $table->string('mother_name');
+                $table->string('gridRadios');
                 $table->string('memo');
                 $table->timestamps();
             });
