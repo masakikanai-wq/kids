@@ -24,20 +24,23 @@
                         </tr>
                     </thead>
                     <tbody>
-                    @foreach($kids as $kid)
-                    <!-- 誕生日から現在までの日数を計算する処理 -->
-                    <?php $now = new DateTime('now'); ?>
-                    <?php $birthday = $kid->birthday; ?>
-                    <?php $diff = $now->diff($birthday); ?>
-                    <?php $formated_interval = $diff->format('%Y年 %mヶ月 %d日'); ?>
-                        <tr>
-                            <th scope="row">{{ optional($kid)->id }}</th>
-                            <td>{{ optional($kid)->name }}</td>
-                            <td>{{ optional($kid)->birthday->format('Y年 m月 d日') }}</td>
-                            <td>{{ $formated_interval }}</td>
-                            <td><a href="/kids/{{ optional($kid)->id }}" class="text-warning">詳細</a></td>
-                        </tr>
-                    @endforeach
+                        @foreach($kids as $kid)
+                            @if(( $kid->user_id ) === ( Auth::user()->id ))
+                            <!-- 誕生日から現在までの日数を計算する処理 -->
+                            <?php $now = new DateTime('now'); ?>
+                            <?php $birthday = $kid->birthday; ?>
+                            <?php $diff = $now->diff($birthday); ?>
+                            <?php $formated_interval = $diff->format('%Y年 %mヶ月 %d日'); ?>
+                            <!-- 処理ここまで -->
+                            <tr>
+                                <th scope="row">{{ optional($kid)->id }}</th>
+                                <td>{{ optional($kid)->name }}</td>
+                                <td>{{ optional($kid)->birthday->format('Y年 m月 d日') }}</td>
+                                <td>{{ $formated_interval }}</td>
+                                <td><a href="/kids/{{ optional($kid)->id }}" class="text-warning">詳細</a></td>
+                            </tr>
+                            @endif
+                        @endforeach
                     </tbody>
                 </table>
             </div>

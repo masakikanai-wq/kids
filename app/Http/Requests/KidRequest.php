@@ -26,9 +26,12 @@ class KidRequest extends FormRequest
     {
         return [
             //
+            // 'user_id' => 'required',
             'name' => 'required',
             'birthday' => 'required',
-            'sex' => 'required'
+            'sex' => 'required',
+            'father' => 'required',
+            'mother' => 'required'
         ];
     }
 }

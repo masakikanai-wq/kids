@@ -11,6 +11,7 @@ class Kid extends Model
 
     // 可変項目（保存したい値）
     protected $fillable = [
+        'user_id',
         'name',
         'birthday',
         'sex',
@@ -24,10 +25,16 @@ class Kid extends Model
     protected $dates = [
         // 'id',
         // 'name',
+        // 'user_id',
         'now',
         'birthday',
         // 'now_formated_date',
         // 'formated_interval',
         // 'diff'
     ];
+
+    // kidテーブルとは多対１の関係であることを定義
+    public function user() {
+        return $this -> belongsTo(User::class);
+    }
 }

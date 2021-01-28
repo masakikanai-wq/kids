@@ -98,6 +98,7 @@ class KidController extends Controller
 
         $kid = new Kid;
 
+        $kid->user_id = Auth::id();
         $kid->name = $request->input('name');
         $kid->sex = $request->input('sex');
         $kid->birthday = $request->input('birthday');
