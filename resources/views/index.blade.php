@@ -12,14 +12,14 @@
             @endif
             <button type="button" class="btn btn-outline-warning mb-4" onclick="location.href='{{ route('post_add') }}'">新規登録</button>
             <p>とうろくいちらん</p>
-            <div>
+            <div class="table-responsive">
                 <table class="table table-striped">
                     <thead>
                         <tr>
                             <th scope="col">id</th>
-                            <th scope="col">なまえ</th>
-                            <th scope="col">たんじょうび</th>
-                            <th scope="col">げんざい</th>
+                            <th scope="col" class="text-nowrap">なまえ</th>
+                            <th scope="col" class="text-nowrap">たんじょうび</th>
+                            <th scope="col" class="text-nowrap">げんざい</th>
                             <th scope="col">#</th>
                         </tr>
                     </thead>
@@ -34,10 +34,10 @@
                             <!-- 処理ここまで -->
                             <tr>
                                 <th scope="row">{{ optional($kid)->id }}</th>
-                                <td>{{ optional($kid)->name }}</td>
-                                <td>{{ optional($kid)->birthday->format('Y年 m月 d日') }}</td>
-                                <td>{{ $formated_interval }}</td>
-                                <td><a href="/kids/{{ optional($kid)->id }}" class="text-warning">詳細</a></td>
+                                <td class="text-nowrap">{{ optional($kid)->name }}</td>
+                                <td class="text-nowrap">{{ optional($kid)->birthday->format('Y年 m月 d日') }}</td>
+                                <td class="text-nowrap">{{ $formated_interval }}</td>
+                                <td class="text-nowrap"><a href="/kids/{{ optional($kid)->id }}" class="text-warning">詳細</a></td>
                             </tr>
                             @endif
                         @endforeach
@@ -140,7 +140,7 @@
         </div>
 
         <!-- Comment -->
-        <div class="jumbotron my-4">
+        <div class="jumbotron jumbotron-fluid my-4">
             <div class="container">
                 <p class="lead">「自分の子どもが生まれてから『お子さんは今何ヶ月でしたっけ？』と何度も訊かれることに気付きました。振り返ると、自分自身も知人の子どもの誕生日までは全く覚えてないことに気付きました。たくさんの子どもたちの誕生日を一元管理して、お祝いのメッセージを忘れずに届けるためにこのアプリを開発しました。」</p>
                 <hr class="my-4">
@@ -165,7 +165,7 @@
                     <div class="col-md-12">
                         <p>Masaki Kanai</p>
                         <p>contact : m.kanai.51@gmail.com</p>
-                        <p>Twitter</p>
+                        <a href="https://twitter.com/barley_teas"><i class="fab fa-twitter fa-lg"></i></a>
                     </div>
                     <div class="col-md-12">
                         <hr class="light-100">

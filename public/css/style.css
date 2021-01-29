@@ -104,6 +104,10 @@ input[type="submit"] {
     margin-bottom: 1rem;
   }
 
+  .fa-twitter:hover {
+    color:#F5C302;
+  }
+
 /* font */
 /* ============================================ */
 
