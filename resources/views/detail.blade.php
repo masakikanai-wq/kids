@@ -6,11 +6,17 @@
     <p><a href="/" class="text-warning">＜＜＜ いちらんへもどる</a></p>
     <div>
         <div class="row m-0 float-right">
-            <p class="mr-2"><a href="{{ route('post_edit', $kid->id) }}"><i class="fas fa-user-edit yellow-ac"></i></a></p>
+            <p class="mr-2">
+                <a href="{{ route('post_edit', $kid->id) }}">
+                <span class="" data-toggle="tooltip" data-placement="top" title="編集"><i class="fas fa-user-edit yellow-ac"></i></span>
+                </a>
+            </p>
             <form method="POST" action="{{ route('post_destroy', $kid->id) }}">
                 @csrf
                 @method('DELETE')
-                <input type="submit" value="&#xf2ed;" class="fas fa-trash-alt yellow-ac" onclick='return confirm("削除してよろしいですか？");'>
+                <span class="" data-toggle="tooltip" data-placement="top" title="削除">
+                    <input type="submit" value="&#xf2ed;" class="fas fa-trash-alt yellow-ac" onclick='return confirm("削除してよろしいですか？");'>
+                </span>
             </form>
         </div>
         <table class="table">
@@ -45,7 +51,7 @@
             </tr>
             <tr>
                 <th scope="row">メモ</th>
-                <td>{{ $kid->memo }}</td>
+                <td>{!! nl2br($kid->memo) !!}</td>
             </tr>
         </tbody>
         </table>
