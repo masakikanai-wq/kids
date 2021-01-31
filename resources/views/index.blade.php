@@ -16,11 +16,11 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">id</th>
-                            <th scope="col" class="text-nowrap">なまえ</th>
-                            <th scope="col" class="text-nowrap">たんじょうび</th>
-                            <th scope="col" class="text-nowrap">げんざい</th>
-                            <th scope="col">#</th>
+                            <!-- <th scope="col">id</th> -->
+                            <th scope="col" class="text-nowrap text-center">なまえ</th>
+                            <th scope="col" class="text-nowrap text-center">たんじょうび</th>
+                            <th scope="col" class="text-nowrap text-center">げんざい</th>
+                            <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -30,14 +30,14 @@
                             <?php $now = new DateTime('now'); ?>
                             <?php $birthday = $kid->birthday; ?>
                             <?php $diff = $now->diff($birthday); ?>
-                            <?php $formated_interval = $diff->format('%Y年 %mヶ月 %d日'); ?>
+                            <?php $formated_interval = $diff->format('%Y年 %mヶ月 %D日'); ?>
                             <!-- 処理ここまで -->
                             <tr>
-                                <th scope="row">{{ optional($kid)->id }}</th>
-                                <td class="text-nowrap">{{ optional($kid)->name }}</td>
-                                <td class="text-nowrap">{{ optional($kid)->birthday->format('Y年 m月 d日') }}</td>
-                                <td class="text-nowrap">{{ $formated_interval }}</td>
-                                <td class="text-nowrap"><a href="/kids/{{ optional($kid)->id }}" class="text-warning">詳細</a></td>
+                                <!-- <th scope="row">{{ optional($kid)->id }}</th> -->
+                                <td class="text-nowrap text-center">{{ optional($kid)->name }}</td>
+                                <td class="text-nowrap text-center">{{ optional($kid)->birthday->format('Y年 m月 d日') }}</td>
+                                <td class="text-nowrap text-center">{{ $formated_interval }}</td>
+                                <td class="text-nowrap text-center"><a href="/kids/{{ optional($kid)->id }}" class="text-warning">詳細</a></td>
                             </tr>
                             @endif
                         @endforeach
@@ -163,8 +163,10 @@
             <div class="container-fluid padding">
                 <div class="row text-center">
                     <div class="col-md-12">
-                        <p>Masaki Kanai</p>
-                        <p>contact : m.kanai.51@gmail.com</p>
+                        <p class="mb-2">Masaki Kanai</p>
+                        <div class="mb-2">
+                            <a href="mailto:m.kanai.51@gmail.com" class="mb-2 mail">m.kanai.51@gmail.com</a>
+                        </div>
                         <a href="https://twitter.com/barley_teas"><i class="fab fa-twitter fa-lg"></i></a>
                     </div>
                     <div class="col-md-12">
